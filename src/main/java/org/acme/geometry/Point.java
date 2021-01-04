@@ -14,6 +14,7 @@ public class Point implements Geometry {
 	}
 	
 	public Point(Coordinate coordinate) {
+		assert(coordinate != null);
 	    this.coordinate = coordinate;
 	}
 
@@ -25,4 +26,25 @@ public class Point implements Geometry {
 		return coordinate.getY();
 	}
 	
+	@Override
+    public boolean isEmpty() {
+        if ( Double.isNaN(this.getX()) || Double.isNaN(this.getY())) {
+            return true;
+        }
+        else return false;
+    }
+
+	@Override
+	public void translate(double dx, double dy) {
+		// TODO Auto-generated method stub
+		this.coordinate = new Coordinate(
+				this.coordinate.getX() + dx,
+				this.coordinate.getY() + dy
+				);
+	}
+	
+	@Override
+    public Point clone() {
+        return new Point(this.coordinate);
+    }
 }

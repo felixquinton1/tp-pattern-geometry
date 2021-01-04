@@ -13,6 +13,7 @@ public class LineString implements Geometry {
     }
 	
 	public LineString(ArrayList <Point> points) {
+		assert(points != null);
 	    this.points = points;
 	}
 	
@@ -29,5 +30,29 @@ public class LineString implements Geometry {
 	public Point getPointN(int n) {
 		return this.points.get(n);
 	}
+	
+	@Override
+    public boolean isEmpty() {
+        // TODO Auto-generated method stub
+        if (this.points.size()==0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+	@Override
+	public void translate(double dx, double dy) {
+		// TODO Auto-generated method stub
+        for (int i = 0; i < this.points.size(); i++) {
+            this.points.get(i).translate(dx,dy);
+        }
+	}
+	
+	@Override
+    public LineString clone() {
+        return new LineString(this.points);
+    }
 
 }

@@ -29,7 +29,19 @@ public class LineStringTest {
         Assert.assertEquals(3.0,l.getPointN(0).getX(), EPSILON);
         Assert.assertEquals(4.0,l.getPointN(0).getY(), EPSILON);
     }
-
+    
+    @Test
+    public void testTranslate() {
+        Coordinate c = new Coordinate(3.0,4.0);
+        Point p = new Point(c);
+        ArrayList<Point> lp = new ArrayList<Point>();
+        lp.add(p);
+        LineString l = new LineString(lp);
+        l.translate(1.0,1.0);
+        Assert.assertEquals(4.0,l.getPointN(0).getX(), EPSILON);
+        Assert.assertEquals(5.0,l.getPointN(0).getY(), EPSILON);
+    }
+    
     @Test
     public void testGetType(){
         LineString l = new LineString();
