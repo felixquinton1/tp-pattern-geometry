@@ -6,15 +6,23 @@ public class Point implements Geometry {
 	@Override
 	public String getType() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Je suis un point.";
 	}
 	
-//	public Point(){
-//		this.coordinate =  ;
-//	}
+	public Point(){
+		this.coordinate = new Coordinate();
+	}
 	
 	public Point(Coordinate coordinate) {
 	    this.coordinate = coordinate;
+	}
+
+	public double getX() {
+		return coordinate.getX();
+	}
+
+	public double getY() {
+		return coordinate.getY();
 	}
 	
 }
