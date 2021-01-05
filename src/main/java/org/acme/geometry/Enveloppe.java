@@ -14,7 +14,7 @@ public class Enveloppe {
 		this.topRight = topRight;
 	}
 	
-	public boolean IsEmpty(){
+	public boolean isEmpty(){
 		return ( this.getBottomLeft().isEmpty() || this.getTopRight().isEmpty());
 	}
 

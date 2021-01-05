@@ -17,4 +17,8 @@ public class SampleFactory {
         points.add(createPointA());
         return new LineString(points);
     }
+    
+    public static Enveloppe createEnvelopeOA() {
+        return new Enveloppe(new Coordinate(0.0,1.0),new Coordinate(3.0,4.0));
+    }
 }
