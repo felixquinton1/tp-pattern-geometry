@@ -59,4 +59,9 @@ public class Point implements Geometry {
         Enveloppe result = builder.build();
         return result;
     }
+
+	@Override
+	public void accept(GeometryVisitor visitor) {
+		visitor.visit(this);
+	}
 }

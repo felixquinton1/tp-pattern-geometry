@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class SampleFactory {
     public static Point createPointO() {
-        return new Point(new Coordinate(0.0,0.0));
+        return new Point(new Coordinate(0.0,1.0));
     }
 
     public static Point createPointA() {

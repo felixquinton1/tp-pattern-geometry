@@ -7,9 +7,7 @@ public class LineString implements Geometry {
 	ArrayList <Point> points;
 	
 	public LineString() {
-        ArrayList<Point> l = new ArrayList<Point>();
-        l.add(new Point());
-        this.points =l;
+        this.points = new ArrayList<Point>();
     }
 	
 	public LineString(ArrayList <Point> points) {
@@ -68,5 +66,10 @@ public class LineString implements Geometry {
         Enveloppe result = builder.build();
         return result;
     }
+
+	@Override
+	public void accept(GeometryVisitor visitor) {
+		visitor.visit(this);
+	}
 
 }
