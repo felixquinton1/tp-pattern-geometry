@@ -7,4 +7,5 @@ public interface Geometry {
 	public Geometry clone();
 	public Enveloppe getEnvelope();
 	public void accept(GeometryVisitor visitor);
+	public void accept(WktVisitor visitor);
 }

@@ -72,4 +72,10 @@ public class LineString implements Geometry {
 		visitor.visit(this);
 	}
 
+	@Override
+	public void accept(WktVisitor visitor) {
+		visitor.visit(this);
+		
+	}
+
 }
