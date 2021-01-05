@@ -9,4 +9,5 @@ public interface Geometry {
 	public void accept(GeometryVisitor visitor);
 	public void accept(WktVisitor visitor);
 	public String asText();
+	public void addListener(GeometryListener listener);
 }

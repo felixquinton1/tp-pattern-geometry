@@ -46,6 +46,7 @@ public class LineString extends AbstractGeometry {
         for (int i = 0; i < this.points.size(); i++) {
             this.points.get(i).translate(dx,dy);
         }
+        triggerChange();
 	}
 	
 	@Override
