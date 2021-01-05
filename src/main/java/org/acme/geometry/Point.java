@@ -52,13 +52,13 @@ public class Point extends AbstractGeometry {
         return new Point(this.coordinate);
     }
 	
-	@Override
-    public Enveloppe getEnvelope() {
-        EnvelopeBuilder builder = new EnvelopeBuilder();
-        builder.insert(this.getCoordinate());
-        Enveloppe result = builder.build();
-        return result;
-    }
+//	@Override
+//    public Enveloppe getEnvelope() {
+//        EnvelopeBuilder builder = new EnvelopeBuilder();
+//        builder.insert(this.getCoordinate());
+//        Enveloppe result = builder.build();
+//        return result;
+//    }
 
 	@Override
 	public void accept(GeometryVisitor visitor) {
