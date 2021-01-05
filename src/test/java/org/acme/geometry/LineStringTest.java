@@ -58,6 +58,7 @@ public class LineStringTest {
         lp.add(p);
         LineString l = new LineString(lp);
 		LineString l2 = l.clone();
+		Assert.assertNotSame(l.getPointN(0),l2.getPointN(0));
 		Assert.assertEquals(l2.getPointN(0).getX(), l.getPointN(0).getX(), EPSILON);
 		Assert.assertEquals(l2.getPointN(0).getY(), l.getPointN(0).getY(), EPSILON);
     }

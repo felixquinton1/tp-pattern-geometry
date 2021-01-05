@@ -17,7 +17,11 @@ public class Point implements Geometry {
 		assert(coordinate != null);
 	    this.coordinate = coordinate;
 	}
-
+	
+	public Coordinate getCoordinate() {
+        return coordinate;
+    }
+	
 	public double getX() {
 		return coordinate.getX();
 	}
@@ -46,5 +50,13 @@ public class Point implements Geometry {
 	@Override
     public Point clone() {
         return new Point(this.coordinate);
+    }
+	
+	@Override
+    public Enveloppe getEnvelope() {
+        EnvelopeBuilder builder = new EnvelopeBuilder();
+        builder.insert(this.getCoordinate());
+        Enveloppe result = builder.build();
+        return result;
     }
 }

@@ -45,6 +45,7 @@ public static final double EPSILON = 1.0e-15;
 	 Coordinate c = new Coordinate(3.0,4.0);
 		Point p = new Point(c);
 		Point p2 = p.clone();
+		Assert.assertNotSame(p,p2);
 		Assert.assertEquals(p2.getX(), p.getX(), EPSILON);
 		Assert.assertEquals(p2.getY(), p.getY(), EPSILON);
     }
