@@ -16,6 +16,7 @@ public class LineStringTest {
         ArrayList<Point> lp = new ArrayList<Point>();
         lp.add(p);
         LineString l = new LineString(lp);
+        Assert.assertFalse(l.isEmpty());
         Assert.assertEquals(1,l.getNumPoints(), EPSILON);
     }
 
@@ -48,4 +49,16 @@ public class LineStringTest {
         Assert.assertEquals("Je suis une LineString.",l.getType());
     }
 
+    
+    @Test
+    public void testClone() {
+    	Coordinate c = new Coordinate(3.0,4.0);
+        Point p = new Point(c);
+        ArrayList<Point> lp = new ArrayList<Point>();
+        lp.add(p);
+        LineString l = new LineString(lp);
+		LineString l2 = l.clone();
+		Assert.assertEquals(l2.getPointN(0).getX(), l.getPointN(0).getX(), EPSILON);
+		Assert.assertEquals(l2.getPointN(0).getY(), l.getPointN(0).getY(), EPSILON);
+    }
 }
