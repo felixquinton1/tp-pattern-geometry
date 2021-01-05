@@ -8,4 +8,5 @@ public interface Geometry {
 	public Enveloppe getEnvelope();
 	public void accept(GeometryVisitor visitor);
 	public void accept(WktVisitor visitor);
+	public String asText();
 }

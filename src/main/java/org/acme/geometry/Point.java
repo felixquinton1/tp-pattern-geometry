@@ -1,6 +1,6 @@
 package org.acme.geometry;
 
-public class Point implements Geometry {
+public class Point extends AbstractGeometry {
 	private Coordinate coordinate;
 	
 	@Override
@@ -70,4 +70,5 @@ public class Point implements Geometry {
 		visitor.visit(this);
 		
 	}
+
 }

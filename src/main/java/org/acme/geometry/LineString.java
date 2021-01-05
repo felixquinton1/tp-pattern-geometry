@@ -3,7 +3,7 @@ package org.acme.geometry;
 
 import java.util.ArrayList;
 
-public class LineString implements Geometry {
+public class LineString extends AbstractGeometry {
 	ArrayList <Point> points;
 	
 	public LineString() {
